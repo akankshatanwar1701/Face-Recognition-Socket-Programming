@@ -8,17 +8,17 @@ host = socket.gethostname() # Get local machine name
 port = 12345                # Reserve a port for your service.
 s.bind((host, port))        # Bind to the port
 
-print('hi working till here')
+print('Hi! It is server1 ')
 
 s.listen(5)                 # Now wait for client connection.
 
-print('working')
+print('Face Detection')
 
 while True:
 
 	c, addr = s.accept()     # Establish connection with client.
 
-	print('hi working')
+	print('Hi There!')
 
 
 	class face_detec():
