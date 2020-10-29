@@ -108,6 +108,7 @@ while True:
 					self.pred_name=self.names[int(self.out)]
 					cv2.putText(self.frame,self.pred_name,(x,y-10),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),2,cv2.LINE_AA) #adds text to img,x,y.. is coord,font,size?,color,thick
 					cv2.rectangle(self.frame,(x,y),(x+w,y+h),(0,255,255),2)
+					c.send(bytes[pred_name])
 
 				cv2.imshow("faces",self.frame)
 
