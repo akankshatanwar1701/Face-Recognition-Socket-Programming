@@ -3,7 +3,7 @@ import socket               # Import socket module
 import cv2
 import numpy as np
 
-s = socket.socket()         # Create a socket object
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)         # Create a socket object
 host = socket.gethostname() # Get local machine name
 port = 12345                # Reserve a port for your service.
 s.bind((host, port))        # Bind to the port
