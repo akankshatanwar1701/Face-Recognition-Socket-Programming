@@ -8,4 +8,11 @@ port = int(input("Select a port number either 12345(Detection) or 12346(Recognit
 
 s.connect((host, port))
 
+while port==12345 and True:
+
+	print(s.recv(1024))
+	data = input();
+	s.send(data.encode())
+
+s.recv(1024);
 s.close()                     # Close the socket when done

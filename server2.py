@@ -38,9 +38,9 @@ while True:
 				self.dist.append([self.d,self.iy])
 			self.dk= sorted(self.dist, key=lambda x:x[0])[:k] 
 			self.labels= np.array(self.dk)[:,-1]
-			self.output=np.unique(self.labels,return_counts=True)
-			self.index= np.argmax(self.output[1])
-			return self.output[0][self.index]
+			self.output=np.unique(self.labels,return_counts=True) #0th-->which all unique, 1th--->count
+			self.index= np.argmax(self.output[1]) 
+			return self.output[0][self.index] #classid
 
 
 		def data_prep_test(self):
@@ -63,7 +63,7 @@ while True:
 				if fx.endswith('.npy'): #(x,30000)
 					self.names[self.class_id]=fx[:-4]#mapping b/w class id and name    #slice .npy
 					print("loaded"+fx)
-					self.data_item=np.load(self.dataset_path+fx)
+					self.data_item=np.load(self.dataset_path+fx) #ispar array tha usko load, at this path
 					self.face_data.append(self.data_item) # first,second so on faces for a given file
 
 				#Create Labels for the Class

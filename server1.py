@@ -94,7 +94,9 @@ while True:
 		persons[-1].convert()
 		persons[-1].save()
 		
-		char= input ("Do you want to continue?: ")
+		c.sendall(b'Do you want to continue?: ')
+
+		char= c.recv(1024).decode()
 
 	print('I am here')
    
